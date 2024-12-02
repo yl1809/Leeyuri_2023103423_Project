@@ -5,13 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const c_event = document.querySelector('.event');
     const c_eventClose = document.querySelector('.close_event_popup');
     const eventcreate_BTN = document.querySelector('.event_create');
-    const deleteEvent_BTN = document.querySelector('.delete_event'); // 삭제 버튼
+    const deleteEvent_BTN = document.querySelector('.delete_event');
 
     const createCategoryButton = document.querySelector('.category_create');
     const inputCategoryName = document.getElementById('input_category_name');
     const categoryList = document.getElementById('category-list');
-    const calendars = {}; // 카테고리별 캘린더 인스턴스를 저장할 객체
-    const contentSections = []; // 동적으로 생성된 캘린더 DIV를 저장
+    const calendars = {}; // 카테고리별 캘린더 인스턴스 저장 객체
+    const contentSections = []; // 동적으로 생성된 캘린더 DIV 저장
 
     let currentEvent = null; // 현재 수정 중인 이벤트를 추적하기 위한 변수
 
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     center: 'title',
                     right: 'addEventButton'
                 },
-                events: [], // 초기엔 이벤트 없음
+                events: [],
                 eventClick: function(info) {
                     // 이벤트 클릭 시 모달 띄우기
                     c_event.style.display = 'block';
@@ -169,13 +169,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 editable: true
             };
             calendar.addEvent(event);
-        }
+        } 
 
         // 이벤트 추가 후 모달 입력값 초기화
-        eventName.value = ''; // 이벤트 이름 리셋
-        eventStart.value = ''; // 시작 날짜 리셋 (datetime-local)
-        eventEnd.value = ''; // 종료 날짜 리셋 (datetime-local)
-        eventDescription.value = ''; // 이벤트 설명 리셋
+        eventName.value = ''; 
+        eventStart.value = ''; 
+        eventEnd.value = ''; 
+        eventDescription.value = ''; 
 
         c_event.style.display = 'none';
     });
@@ -183,10 +183,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 이벤트 삭제
     deleteEvent_BTN.addEventListener('click', function() {
         if (currentEvent) {
-            // 삭제된 이벤트 제거
             currentEvent.remove();
             currentEvent = null;  // 삭제 후 currentEvent 초기화
-            c_event.style.display = 'none';  // 모달 닫기
+            c_event.style.display = 'none';
         }
     });
 });
