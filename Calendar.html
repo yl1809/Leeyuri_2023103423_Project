@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register events by category</title>
+    <link rel="stylesheet" href="Calendar.css">
+    <!-- FullCalendar 스타일 및 스크립트 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.0/main.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.0/main.min.js"></script>
+</head>
+<body>
+    <div class="container" id="content-wrap">
+        <aside class="side_bar js-side_bar">
+            <ul id="category-list">
+                <li><h1>Category</h1></li>
+                <!-- 동적으로 카테고리 목록이 추가되는 영역 -->
+            </ul>
+            <div class="btn_create" id="btn_create">
+                <button>Create</button>
+            </div>
+        </aside>
+        <section class="categories">
+            <div id="calendar"></div> <!-- 기본 캘린더 영역 -->
+        </section>
+    </div>
+
+    <!-- Category Create Modal Popup -->
+    <div class="category" style="display: none;">
+        <div class="create_category_popup">
+            <h3>Create Category</h3>
+            <p>Category Name <input id="input_category_name"/></p>
+            <div class="button_container">
+                <button type="button" class="category_create">등록</button>
+                <button type="button" class="close_category_popup">닫기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Create Modal Popup -->
+    <div class="event" style="display: none;">
+        <div class="create_event_popup">
+            <h3>Create Event</h3>
+            <p><label for="input_event_name">Event Name</label><input type="text" id="input_event_name"/></p>
+            <p><label for="input_Start">Start Date</label><input type="datetime-local" id="input_Start" value=""></p>
+            <p><label for="input_End">End Date</label><input type="datetime-local" id="input_End" value=""></p>
+            <p><label for="input_description">Description</label><textarea id="input_description" value=""></textarea></p>
+            <div class="button_container">
+                <button type="button" class="event_create">등록</button>
+                <button type="button" class="close_event_popup">닫기</button>
+                <button type="button" class="delete_event" aria-hidden="true">삭제</button>
+            </div>
+        </div>
+    </div>    
+    
+    <script src="Calendar.js"></script>
+</body>
+</html>
